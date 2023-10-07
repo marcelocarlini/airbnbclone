@@ -2,8 +2,14 @@ import React from "react";
 import Navbar from "./Navbar"
 import SubClasses from "./SubClasses"
 import Card from "./Card"
+import { data } from './data.js'
 
 const Home = () => {
+    const displayCards = data ?
+        data?.map((d, key) => (
+            <Card item={d} key={key} />
+        )) :
+        <div>..processando</div>
     return (
         <>
             <header>
@@ -12,7 +18,11 @@ const Home = () => {
             </header>
             <body>
                 <div className="container_fluid">
-                    <Card />
+                    <div className="row">
+
+                        {displayCards}
+
+                    </div>
                 </div>
 
             </body>
