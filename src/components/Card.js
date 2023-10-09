@@ -1,14 +1,25 @@
+/* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import Carousel from 'react-bootstrap/Carousel';
+import './Card.css'
 
 
 const Card = (props) => {
+    const mappingImg = props.item.images ?
+        props.item.images.map((i, k) => (
+            <Carousel.Item>
+                <img className='d-block w-100 rounded slideImg' key={k} src={i} />
+            </Carousel.Item>
+        )) : <Carousel.Item>
+            <img className='d-block w-100' alt='' src="https://plus.unsplash.com/premium_photo-1664464228938-0fcef7296c95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" />
 
+        </Carousel.Item>
     return (
-        <div className="col-md-4 col-lg-3 col-xl-3 col-sm-12">
+        <div className="col-md-3 col-lg-3 col-xl- col-sm-12">
             <div class="card border border-0 p-2" style={{ width: '18rem' }}>
                 <Carousel>
-                    <Carousel.Item>
+                    {mappingImg}
+                    {/* <Carousel.Item>
                         <img className='d-block w-100' alt='' src="https://plus.unsplash.com/premium_photo-1664464228938-0fcef7296c95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" />
 
                     </Carousel.Item>
@@ -19,7 +30,7 @@ const Card = (props) => {
                     <Carousel.Item>
                         <img className='d-block w-100' alt='' src="https://plus.unsplash.com/premium_photo-1664464228938-0fcef7296c95?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1740&q=80" />
 
-                    </Carousel.Item>
+                    </Carousel.Item> */}
                 </Carousel>
                 <div class="card-body text-start">
                     <div className='d-flex justify-content-between'>

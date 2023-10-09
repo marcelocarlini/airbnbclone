@@ -17,7 +17,7 @@ const Home = () => {
                 <SubClasses />
             </header>
             <body>
-                <div className="container_fluid">
+                <div className="container-fluid container text-center">
                     <div className="row">
 
                         {displayCards}
