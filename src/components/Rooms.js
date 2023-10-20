@@ -7,36 +7,8 @@ import OpenAI from "openai";
 
 const { Configuration, OpenAIApi } = require('openai')
 const Rooms = () => {
-    const [tabelVal, setTavelVal] = useState(null)
-    const [tableProcessing, setTableProcessing] = useState(false)
     const location = useLocation();
     const placeInfo = location.state.info
-
-    const openai = new OpenAI({
-        apiKey: process.env.REACT_APP_OPENAI_API_KEY,
-        dangerouslyAllowBrowser: true,
-    });
-
-    const GererateTravelPlan = async (targetPlace) => {
-        setTableProcessing(true)
-        const response = await openai.chat.completions.create({
-            model: "gpt-3.5-turbo",
-            messages: "Qual capital do Brasil?",
-            temperature: 0.7,
-            max_tokens: 256,
-        });
-        setTableVal(response.data.choices[0].text)
-        setTableProcessing(false)
-        console.log(response.data.choices[0].text);
-    }
-    GererateTravelPlan();
-
-    const imageGallery = placeInfo?.images.slice(1, placeInfo?.images.lenght).map((i, k) => (
-        <div className='col-12 col-md-6 px-1 my-1' key={k}>
-            <img src={i} className='rounded smallImg' />
-
-        </div>
-    ))
 
     return (
 
@@ -59,28 +31,6 @@ const Rooms = () => {
                                 {imageGallery}
                             </div>
                         </div>
-                    </div>
-                </div>
-                <div className='container my-5'>
-                    <div className='text-center'>
-                        <button className='btn btn-lg btn-primary w-50 text-center' onClick={()=>{GenerateTravelPlan(placeInfo.city)}}>
-                            Crie plano de viagem para {placeInfo.city} <i className='bi bi-magic'></i>
-                        </button><br />
-                        <small className='fst-italic'>powered by <b>OpenAI GPT-3</b></small>
-                    </div>
-                    <div className='mt-4 pb-5'>
-                        {
-                            tableProcessing && !tabelVal ?
-                                <div className='d-flex justify-content-center'>
-                                    <div className='spinner-border' role="status">
-                                        <span className='visually-hidden'>processar...</span>
-                                    </div>
-                                </div>
-                                :!tableProcessing && tabelVal?parse(tabelVal):""
-                        }
-                        <table className='myTable'>
-
-                        </table>
                     </div>
                 </div>
             </body>

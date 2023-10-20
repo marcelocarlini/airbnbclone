@@ -3,8 +3,26 @@
   width: 100%;
   object-fit: cover;
 }
+<<<<<<< HEAD
+.myTable {
+  font-weight: bold;
+  box-shadow: #ff385c;
+  border-collapse: collapse;
+  width: 100%;
+}
+.myTable td,
+.myTable th {
+  border: 1px solid #ddd;
+}
+.smallImg {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+=======
 .smallImg{
     height: 150px;
     width: 100%;
     object-fit: cover;
 }
+>>>>>>> ec3f39f745fd39e3bff90622cd89c4ef1e6d554a
