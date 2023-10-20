@@ -17,7 +17,7 @@ const Card = (props) => {
     return (
         <div className="col-md-4 col-lg-3 col-xl-3 col-12 ">
             <div class="card border border-0 p-2" style={{ width: '18rem' }}>
-                <Link to={`/rooms/${props.item.id}`} state={{info:props.item}} style={{ textDecoration: "none", color: "black" }}>
+                <Link to={`/rooms/${props.item.id}`} style={{ textDecoration: "none", color: "black" }}>
                     <Carousel>
                         {mappingImg}
                     </Carousel>

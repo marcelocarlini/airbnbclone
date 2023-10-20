@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import './Navbar.css'
-import React from 'react';
 
 const Navbar = () => {
 
@@ -9,7 +8,7 @@ const Navbar = () => {
     <nav class="navbar sticky-top navbar-expand-lg bg-white border border-1">
       <div class="container-fluid mt-2 mb-1">
         <a class="navbar-brand" href="#">
-          <img src="./logo192.png" alt="" width="40" height="34" />
+          <img src="logo192.png" alt="" width="40" height="34" />
           <span class="mt-4">
             <b>
               TraveSon
